@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/pages/login_page.dart';
+import './view/pages/create_tasks_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => Login(),
+        '/': (context) => const Create(),
       },
     );
   }
