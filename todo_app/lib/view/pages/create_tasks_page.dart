@@ -20,7 +20,8 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(169, 1, 247, 1),
+        backgroundColor: const Color(0xFFA901F7),
+        // backgroundColor: const Color.fromRGBO(169, 1, 247, 1),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,8 +46,11 @@ class _CreateState extends State<Create> {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.all(
-                      10,
+                    padding: EdgeInsets.only(
+                      top: 10,
+                      left: 50,
+                      bottom: 20,
+                      right: 10,
                     ),
                     child: Text(
                       'Nova Tarefa',
@@ -54,7 +58,7 @@ class _CreateState extends State<Create> {
                       style: TextStyle(
                         fontFamily: 'Montserrat-Bold',
                         color: Colors.white,
-                        fontSize: 17,
+                        fontSize: 25,
                         overflow: TextOverflow.fade,
                       ),
                     ),
@@ -79,54 +83,106 @@ class _CreateState extends State<Create> {
                           filled: true,
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 0, color: Colors.white),
                             borderRadius: BorderRadius.all(
-                              Radius.circular(20),
+                              Radius.circular(15),
                             ),
                           ),
                           alignLabelWithHint: true,
                           hintText: 'Título da Tarefa',
+                          hintMaxLines: 1,
                           hintStyle: TextStyle(
-                            fontFamily: 'Tahoma',
-                            fontSize: 15,
-                          ),
+                              fontFamily: 'Tahoma',
+                              fontSize: 18,
+                              color: Color(0xFF3101B9)),
                         ),
                       ),
                     ),
                     Container(
                       height: 15,
                     ),
-                    Form(
-                      key: _descriptionkKey,
-                      child: TextFormField(
-                        controller: _descriptionController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Inserir uma descriçao';
-                          }
-                          return null;
-                        },
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 150, horizontal: 600),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
+                    Container(
+                      height: 200,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      child: Form(
+                        key: _descriptionkKey,
+                        child: TextFormField(
+                          controller: _descriptionController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Inserir uma descrição';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 0, color: Colors.white),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
                             ),
-                          ),
-                          alignLabelWithHint: true,
-                          hintText: 'Escreva uma descrição para sua tarefa.',
-                          hintStyle: TextStyle(
-                            fontFamily: 'Tahoma',
-                            fontSize: 6,
+                            floatingLabelAlignment:
+                                FloatingLabelAlignment.start,
+                            alignLabelWithHint: true,
+                            hintText: 'Escreva uma descrição para sua tarefa.',
+                            hintMaxLines: 10,
+                            hintStyle: TextStyle(
+                              fontFamily: 'Tahoma',
+                              fontSize: 13,
+                            ),
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20, left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    colorButton('', color: const Color(0xFFFFF2CC)),
+                    colorButton('', color: const Color(0xFFFFD9F0)),
+                    colorButton('', color: const Color(0xFFE8C5FF)),
+                    colorButton('', color: const Color(0xFFCAFBFF)),
+                    colorButton('', color: const Color(0xFFE3FFE6)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 150),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(
+                      iconSize: 90,
+                      icon: const Icon(
+                        Icons.close_rounded,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: 90,
+                      icon: const Icon(
+                        Icons.check_rounded,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -134,3 +190,27 @@ class _CreateState extends State<Create> {
     );
   }
 }
+
+Widget colorButton(String text, {Color color = Colors.grey}) {
+  return ElevatedButton(
+    style: ButtonStyle(
+        fixedSize: MaterialStateProperty.all(const Size.fromHeight(50)),
+        backgroundColor: MaterialStateProperty.all((const Color(0xFFE3FFE6))),
+        shape: MaterialStateProperty.all(
+          const CircleBorder(),
+        )),
+    child: const Text(''),
+    onPressed: () {},
+  );
+}
+
+// Widget actionButton(Widget icon, {Color color = Colors.white}) {
+//   return IconButton(
+//     iconSize: 90,
+//     icon: const Icon(
+//       Icons.check_rounded,
+//       color: Colors.white,
+//     ),
+//     onPressed: () {},
+//   );
+// }
