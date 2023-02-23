@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Widigetlogin extends StatefulWidget {
   @override
@@ -20,6 +21,10 @@ class _WidigetloginState extends State<Widigetlogin> {
                     maxLines: 1,
                     decoration: InputDecoration(
                       hintText: "Email ou CPF",
+                      hintStyle: TextStyle(
+                        fontFamily: "Tahoma",
+                        color: Color.fromRGBO(49, 1, 185, 1),
+                      ),
                       filled: true,
                       fillColor: Colors.white,
                       enabledBorder: OutlineInputBorder(
@@ -39,6 +44,10 @@ class _WidigetloginState extends State<Widigetlogin> {
                     maxLines: 1,
                     decoration: InputDecoration(
                       hintText: "Senha",
+                      hintStyle: TextStyle(
+                        fontFamily: "Tahoma",
+                        color: Color.fromRGBO(49, 1, 185, 1),
+                      ),
                       filled: true,
                       fillColor: Colors.white,
                       enabledBorder: OutlineInputBorder(
@@ -50,19 +59,49 @@ class _WidigetloginState extends State<Widigetlogin> {
                   ),
                 ),
                 Row(children: [
-                  Padding(padding: EdgeInsets.only(left: 10)),
-                  Text("Esqueceu seu login ou senha ?"),
+                  Padding(padding: EdgeInsets.only(left: 14)),
+                  Text(
+                    "Esqueceu seu login ou senha?",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: "Tahoma",
+                      fontSize: 16,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
                   GestureDetector(
-                    child: Text("Clique aqui"),
+                    onTap: () {
+                      print("ok");
+                    },
+                    child: Text(
+                      "Clique aqui",
+                      style: TextStyle(
+                        color: Color.fromRGBO(255, 214, 0, 1),
+                        fontFamily: "Tahoma",
+                        fontSize: 16,
+                      ),
+                    ),
                   )
                 ]),
               ],
             ),
           ),
           SizedBox(
-            height: 15,
+            height: 25,
           ),
           ElevatedButton(
+            style: ButtonStyle(
+                shape: MaterialStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                ),
+                backgroundColor:
+                    MaterialStateProperty.all(Color.fromRGBO(49, 1, 185, 1))),
             onPressed: () {},
             child: Text(
               "Entrar",
