@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './view/pages/create_tasks_page.dart';
+import './view/pages/cadastro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (context) => const Create(),
-      },
+      routes: {'/': (context) => Cadastro()},
     );
   }
 }
