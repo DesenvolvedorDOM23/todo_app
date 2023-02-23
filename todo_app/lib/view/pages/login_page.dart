@@ -55,9 +55,45 @@ class _LoginState extends State<Login> {
                 ),
               ),
               SizedBox(
-                height: 55,
+                height: 15,
               ),
               Widigetlogin(),
+              SizedBox(
+                height: 28,
+              ),
+              Divider(
+                color: Colors.white,
+              ),
+              SizedBox(
+                height: 18,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Padding(padding: EdgeInsets.only(left: 8)),
+                Text(
+                  "Não possui cadastro?",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "Tahoma",
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("ok");
+                  },
+                  child: Text(
+                    "Clique aqui",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 214, 0, 1),
+                      fontFamily: "Tahoma",
+                      fontSize: 16,
+                    ),
+                  ),
+                )
+              ]),
             ],
           ),
         ),
