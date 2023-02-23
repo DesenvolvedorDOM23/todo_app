@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import './view/pages/login_page.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/login': (context) => Login(),
+        '/': (context) => Login(),
       },
     );
   }

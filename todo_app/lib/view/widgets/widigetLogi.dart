@@ -8,21 +8,72 @@ class Widigetlogin extends StatefulWidget {
 class _WidigetloginState extends State<Widigetlogin> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Form(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Container(
-              width: 60,
-              height: 20,
-              child: TextFormField(
-                decoration: InputDecoration(hintText: "óla"),
+    return SafeArea(
+      child: Column(
+        children: [
+          Form(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: TextFormField(
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      hintText: "Email ou CPF",
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: TextFormField(
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      hintText: "Senha",
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(children: [
+                  Padding(padding: EdgeInsets.only(left: 10)),
+                  Text("Esqueceu seu login ou senha ?"),
+                  GestureDetector(
+                    child: Text("Clique aqui"),
+                  )
+                ]),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              "Entrar",
+              style: TextStyle(
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 30,
               ),
-            )
-          ]),
-        )
-      ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
