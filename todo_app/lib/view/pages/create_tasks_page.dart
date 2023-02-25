@@ -1,6 +1,7 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:todo_app/view/pages/todo_list_page.dart';
 
 class Create extends StatefulWidget {
   const Create({super.key});
@@ -170,7 +171,10 @@ class _CreateState extends State<Create> {
                         Icons.close_rounded,
                         color: Colors.white,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TodoList()));
+                      },
                     ),
                     IconButton(
                       iconSize: 90,
@@ -178,7 +182,10 @@ class _CreateState extends State<Create> {
                         Icons.check_rounded,
                         color: Colors.white,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TodoList()));
+                      },
                     ),
                   ],
                 ),
