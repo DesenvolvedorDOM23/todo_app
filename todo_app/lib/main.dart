@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/pages/login_page.dart';
+import 'package:todo_app/view/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => Login(),
+        '/': (context) =>  const Register(),
       },
     );
   }
