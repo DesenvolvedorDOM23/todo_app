@@ -51,8 +51,13 @@ class _ListagemState extends State<Listagem> {
               ),
             ],
           ),
-          //barra de pesquisa ..?
+          /////
+          ///
+          ///barra de pesquisa!
+          ///
+          ///
           Column(
+            //definir tamanho dessa colum pode ser o melhor caminho pra fixar botao bottom
             children: [
               Container(
                 margin: EdgeInsets.only(top: 30),
@@ -250,13 +255,29 @@ class _ListagemState extends State<Listagem> {
           SizedBox(
             height: 25,
           ),
+
+          //////
+          ///botão apresentado ainda não esta configurado corretamente!
+
           IconButton(
-              onPressed: null,
+              onPressed: null, //<<<apagar qdo for navegar!
+              // onPressed: () {
+              //           Navigator.of(context).push(MaterialPageRoute(
+              //               builder: (context) => Create()));
+              //         },
+
+              ////
+              ///fixar bottom center
+
               icon: Icon(
                 CupertinoIcons.add,
                 size: 60,
                 color: Colors.white,
               )),
+
+          /////
+          ///VVVV esse botão ficou fixo, VVVV
+          ///porem nao rolou ajustar a area q ele pode expandir ainda
 
           // Expanded(
           //     child: Align(
