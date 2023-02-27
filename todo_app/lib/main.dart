@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/pages/create_tasks_page.dart';
-import './view/pages/cadastro.dart';
+import 'package:todo_app/view/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {'/': (context) => Cadastro()},
+      routes: {
+        '/': (context) => const Register(),
+      },
     );
   }
 }

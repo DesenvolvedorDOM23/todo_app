@@ -27,11 +27,17 @@ flutter:
 
 
   uses-material-design: true
-
-
+ 
+  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/coruja-image.png
-    - assets/images/logo.png
+    - assets/images/mascote.jpg
+    - assets/images/photo_2023-02-17_20-34-23.jpg
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+
+
 
 
   fonts:
