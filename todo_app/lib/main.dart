@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './view/pages/create_tasks_page.dart';
 import './view/pages/cadastro.dart';
 
 void main() {
