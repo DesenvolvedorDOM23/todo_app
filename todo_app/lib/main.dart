@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/pages/cadastro.dart';
+import './view/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Todo App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {'/': (context) => Cadastro()},
+      routes: {
+        '/': (context) => Login(),
+      },
     );
   }
 }
