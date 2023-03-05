@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import './view/pages/login_page.dart';
 import './view/pages/cadastro.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => Login(),
+        '/cadastro': (context) => Cadastro(),
       },
     );
   }
