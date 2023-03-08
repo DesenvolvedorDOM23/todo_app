@@ -21,7 +21,8 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFA901F7),
+        // ignore: prefer_const_constructors
+        backgroundColor: Color.fromRGBO(169, 1, 247, 1),
         // backgroundColor: const Color.fromRGBO(169, 1, 247, 1),
         body: SingleChildScrollView(
           child: Column(
@@ -82,10 +83,11 @@ class _CreateState extends State<Create> {
                         },
                         decoration: const InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: Color.fromRGBO(255, 255, 255, 1),
                           enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 0, color: Colors.white),
+                            borderSide: BorderSide(
+                                width: 0,
+                                color: Color.fromARGB(255, 255, 255, 255)),
                             borderRadius: BorderRadius.all(
                               Radius.circular(15),
                             ),
@@ -96,17 +98,17 @@ class _CreateState extends State<Create> {
                           hintStyle: TextStyle(
                               fontFamily: 'Tahoma',
                               fontSize: 18,
-                              color: Color(0xFF3101B9)),
+                              color: Color.fromRGBO(49, 1, 185, 1)),
                         ),
                       ),
                     ),
-                    Container(
+                    const SizedBox(
                       height: 15,
                     ),
                     Container(
                       height: 200,
                       decoration: const BoxDecoration(
-                        color: Colors.white,
+                        color: Color.fromRGBO(255, 255, 255, 1),
                         borderRadius: BorderRadius.all(
                           Radius.circular(15),
                         ),
@@ -123,10 +125,11 @@ class _CreateState extends State<Create> {
                           },
                           decoration: const InputDecoration(
                             filled: true,
-                            fillColor: Colors.white,
+                            fillColor: Color.fromRGBO(255, 255, 255, 1),
                             enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(width: 0, color: Colors.white),
+                              borderSide: BorderSide(
+                                  width: 0,
+                                  color: Color.fromRGBO(255, 255, 255, 1)),
                               borderRadius: BorderRadius.all(
                                 Radius.circular(15),
                               ),
@@ -152,11 +155,15 @@ class _CreateState extends State<Create> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    colorButton('', color: const Color(0xFFFFF2CC)),
-                    colorButton('', color: const Color(0xFFFFD9F0)),
-                    colorButton('', color: const Color(0xFFE8C5FF)),
-                    colorButton('', color: const Color(0xFFCAFBFF)),
-                    colorButton('', color: const Color(0xFFE3FFE6)),
+                    colorButton('', color: Color.fromRGBO(255, 242, 204, 1)),
+                    colorButton('',
+                        color: const Color.fromRGBO(255, 217, 240, 1)),
+                    colorButton('',
+                        color: const Color.fromRGBO(232, 197, 255, 1)),
+                    colorButton('',
+                        color: const Color.fromRGBO(202, 251, 255, 1)),
+                    colorButton('',
+                        color: const Color.fromRGBO(227, 255, 230, 1)),
                   ],
                 ),
               ),
@@ -169,22 +176,23 @@ class _CreateState extends State<Create> {
                       iconSize: 90,
                       icon: const Icon(
                         Icons.close_rounded,
-                        color: Colors.white,
+                        color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                       onPressed: () {
+                        // Navigator.pop(context);
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => TodoList()));
+                            builder: (context) => Listagem()));
                       },
                     ),
                     IconButton(
                       iconSize: 90,
                       icon: const Icon(
                         Icons.check_rounded,
-                        color: Colors.white,
+                        color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => TodoList()));
+                            builder: (context) => Listagem()));
                       },
                     ),
                   ],
@@ -202,7 +210,8 @@ Widget colorButton(String text, {Color color = Colors.grey}) {
   return ElevatedButton(
     style: ButtonStyle(
         fixedSize: MaterialStateProperty.all(const Size.fromHeight(50)),
-        backgroundColor: MaterialStateProperty.all((const Color(0xFFE3FFE6))),
+        backgroundColor:
+            MaterialStateProperty.all((const Color.fromRGBO(227, 255, 230, 1))),
         shape: MaterialStateProperty.all(
           const CircleBorder(),
         )),
