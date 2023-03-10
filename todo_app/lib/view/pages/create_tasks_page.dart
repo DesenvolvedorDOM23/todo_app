@@ -1,11 +1,11 @@
 // import 'dart:html';
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:todo_app/view/pages/todo_list_page.dart';
 
 class Create extends StatefulWidget {
   const Create({super.key});
-
   @override
   State<Create> createState() => _CreateState();
 }
@@ -33,12 +33,12 @@ class _CreateState extends State<Create> {
                   Container(
                     height: 73,
                     width: 73,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(73))),
                     child: Padding(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                           top: 12, left: 10, bottom: 24, right: 20),
                       child: Image.asset(
                         'assets/images/logo.png',
@@ -47,7 +47,7 @@ class _CreateState extends State<Create> {
                       ),
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(
                       top: 10,
                       left: 50,
@@ -68,7 +68,7 @@ class _CreateState extends State<Create> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(30),
+                padding: EdgeInsets.all(30),
                 child: Column(
                   children: [
                     Form(
@@ -81,7 +81,7 @@ class _CreateState extends State<Create> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           filled: true,
                           fillColor: Color.fromRGBO(255, 255, 255, 1),
                           enabledBorder: OutlineInputBorder(
@@ -107,7 +107,7 @@ class _CreateState extends State<Create> {
                     ),
                     Container(
                       height: 200,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: Color.fromRGBO(255, 255, 255, 1),
                         borderRadius: BorderRadius.all(
                           Radius.circular(15),
@@ -151,48 +151,44 @@ class _CreateState extends State<Create> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 20, left: 20),
+                padding: EdgeInsets.only(right: 20, left: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     colorButton('', color: Color.fromRGBO(255, 242, 204, 1)),
-                    colorButton('',
-                        color: const Color.fromRGBO(255, 217, 240, 1)),
-                    colorButton('',
-                        color: const Color.fromRGBO(232, 197, 255, 1)),
-                    colorButton('',
-                        color: const Color.fromRGBO(202, 251, 255, 1)),
-                    colorButton('',
-                        color: const Color.fromRGBO(227, 255, 230, 1)),
+                    colorButton('', color: Color.fromRGBO(255, 217, 240, 1)),
+                    colorButton('', color: Color.fromRGBO(232, 197, 255, 1)),
+                    colorButton('', color: Color.fromRGBO(202, 251, 255, 1)),
+                    colorButton('', color: Color.fromRGBO(227, 255, 230, 1)),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 150),
+                padding: EdgeInsets.only(top: 150),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     IconButton(
                       iconSize: 90,
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.close_rounded,
                         color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                       onPressed: () {
                         // Navigator.pop(context);
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Listagem()));
+                        // Navigator.of(context).push(MaterialPageRoute(
+                        //     builder: (context) => Listagem()));
                       },
                     ),
                     IconButton(
                       iconSize: 90,
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.check_rounded,
                         color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Listagem()));
+                        // Navigator.of(context).push(MaterialPageRoute(
+                        //     builder: (context) => Listagem()));
                       },
                     ),
                   ],
@@ -209,13 +205,13 @@ class _CreateState extends State<Create> {
 Widget colorButton(String text, {Color color = Colors.grey}) {
   return ElevatedButton(
     style: ButtonStyle(
-        fixedSize: MaterialStateProperty.all(const Size.fromHeight(50)),
+        fixedSize: MaterialStateProperty.all(Size.fromHeight(50)),
         backgroundColor:
-            MaterialStateProperty.all((const Color.fromRGBO(227, 255, 230, 1))),
+            MaterialStateProperty.all((Color.fromRGBO(227, 255, 230, 1))),
         shape: MaterialStateProperty.all(
-          const CircleBorder(),
+          CircleBorder(),
         )),
-    child: const Text(''),
+    child: Text(''),
     onPressed: () {},
   );
 }
