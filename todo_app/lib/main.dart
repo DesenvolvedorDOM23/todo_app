@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import './presenter/login_presenter.dart';
 import 'model/data/user_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import './view/pages/cadastro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          '/': (context) => Login(),
-          // '/cadastro': ((context) => Cadastro())
+          '/login': (context) => Login(),
+          '/cadastro': ((context) => Cadastro())
         },
       ),
     );
