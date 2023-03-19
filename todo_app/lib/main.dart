@@ -10,6 +10,7 @@ import 'package:todo_app/view/pages/login_page.dart';
 import './presenter/login_presenter.dart';
 import 'model/data/user_repository.dart';
 import './view/pages/cadastro.dart';
+import 'package:todo_app/view/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,8 +41,10 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => Login(),
           '/cadastro': ((context) => Cadastro()),
+          '/cadastrocomplete': (context) =>  const Register(),
           '/lista': ((context) => Listagem()),
           '/regristrar': ((context) => CreateTodo()),
+      
         },
       ),
     );
