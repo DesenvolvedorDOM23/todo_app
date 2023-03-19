@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/controllers/create_tasks_controller.dart';
+import 'package:todo_app/view/pages/listagem.dart';
 
 class CreateTodo extends StatefulWidget {
   const CreateTodo({super.key});
@@ -43,15 +42,10 @@ class _CreateState extends State<CreateTodo> {
                       child: Padding(
                         padding: EdgeInsets.only(
                             top: 12, left: 10, bottom: 24, right: 20),
-                        child: InkWell(
-                          onTap: () {
-                            login('lovepeople@email.com', '123456');
-                          },
-                          child: Image.asset(
-                            'assets/images/logo.png',
-                            height: 37,
-                            width: 39,
-                          ),
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          height: 37,
+                          width: 39,
                         ),
                       ),
                     ),
@@ -262,6 +256,7 @@ class _CreateState extends State<CreateTodo> {
                           color: Color(0xFFFFFFFF),
                         ),
                         onPressed: () {
+                          Navigator.of(context).pushNamed('/Listagem');
                           //TODO: aguardando o merge com a tela de listagem
                         },
                       ),
@@ -285,27 +280,4 @@ class _CreateState extends State<CreateTodo> {
       );
     });
   }
-}
-
-Future<String?> login(String email, String senha) {
-  const String KEY_TOKEN = 'token';
-  String baseUrl = 'https://lovepeople-todo.onrender.com/api/';
-
-  Uri uri = Uri.parse('${baseUrl}auth/local');
-  return http.post(
-    uri,
-    body: {
-      'identifier': email,
-      'password': senha,
-    },
-  ).then((value) {
-    if (value.statusCode == 200) {
-      // ignore: avoid_print
-      print(value.statusCode);
-      Map json = jsonDecode(value.body);
-      return json['jwt'];
-    } else {
-      return null;
-    }
-  });
 }
