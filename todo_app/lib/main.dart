@@ -1,9 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import './view/pages/login_page.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/controllers/create_tasks_controller.dart';
+import 'package:todo_app/model/data/api/create_tasks_repository.dart';
+import 'package:todo_app/view/pages/create_tasks_page.dart';
+import 'package:todo_app/view/pages/listagem.dart';
+import 'package:todo_app/view/pages/login_page.dart';
 import './presenter/login_presenter.dart';
 import 'model/data/user_repository.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import './view/pages/cadastro.dart';
 
 void main() {
@@ -21,6 +26,10 @@ class MyApp extends StatelessWidget {
         Provider<UserRepository>(
           create: (_) => UserRepository(),
         ),
+        Provider<CreateTodoRepository>(create: (_) => CreateTodoRepository()),
+        ChangeNotifierProvider(
+          create: (context) => CreateTasksController(context.read()),
+        ),
         ChangeNotifierProvider(
           create: (context) => LoginPresenter(
             context.read(),
@@ -30,7 +39,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         routes: {
           '/login': (context) => Login(),
-          '/cadastro': ((context) => Cadastro())
+          '/cadastro': ((context) => Cadastro()),
+          '/lista': ((context) => Listagem()),
+          '/regristrar': ((context) => CreateTodo()),
         },
       ),
     );
