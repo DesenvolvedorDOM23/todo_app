@@ -13,7 +13,7 @@ import './view/pages/cadastro.dart';
 import 'package:todo_app/view/pages/register_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -39,12 +39,11 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          '/login': (context) => Login(),
+          '/': (context) => Login(),
           '/cadastro': ((context) => Cadastro()),
-          '/cadastrocomplete': (context) =>  const Register(),
+          '/cadastrocomplete': (context) => const Register(),
           '/lista': ((context) => Listagem()),
-          '/regristrar': ((context) => CreateTodo()),
-      
+          '/registrar': ((context) => CreateTodo()),
         },
       ),
     );

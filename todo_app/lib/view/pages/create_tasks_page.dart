@@ -256,7 +256,7 @@ class _CreateState extends State<CreateTodo> {
                           color: Color(0xFFFFFFFF),
                         ),
                         onPressed: () {
-                          Navigator.of(context).pushNamed('/Listagem');
+                          Navigator.of(context).pushNamed('/Lista');
                           //TODO: aguardando o merge com a tela de listagem
                         },
                       ),
