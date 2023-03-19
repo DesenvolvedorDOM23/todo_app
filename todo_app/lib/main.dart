@@ -12,7 +12,7 @@ import 'model/data/user_repository.dart';
 import './view/pages/cadastro.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -38,10 +38,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          '/login': (context) => Login(),
+          '/': (context) => Login(),
           '/cadastro': ((context) => Cadastro()),
           '/lista': ((context) => Listagem()),
-          '/regristrar': ((context) => CreateTodo()),
+          '/registrar': ((context) => CreateTodo()),
         },
       ),
     );
