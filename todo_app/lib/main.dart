@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/view/pages/register_page.dart';
+import 'package:todo_app/view/pages/create_tasks_page.dart';
+import 'package:todo_app/view/pages/todo_list_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
       routes: {
         '/': (context) =>  const Register(),
+        '/todoList':(context) =>  TodoList(),
       },
     );
   }

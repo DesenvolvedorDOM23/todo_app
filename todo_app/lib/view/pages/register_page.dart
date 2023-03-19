@@ -33,7 +33,9 @@ class Register extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  ElevatedButton(onPressed: () {}, 
+                  ElevatedButton(onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/todoList');
+                  }, 
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 69, 39, 176),),
                     padding: MaterialStateProperty.all(
@@ -55,6 +57,7 @@ class Register extends StatelessWidget {
                     ),
                      
                     ),
+                    
                     )
                 ],
               ),
