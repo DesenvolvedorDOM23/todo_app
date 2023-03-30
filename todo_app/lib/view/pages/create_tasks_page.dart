@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/controllers/create_tasks_controller.dart';
-import 'package:todo_app/view/pages/listagem.dart';
 
 class CreateTodo extends StatefulWidget {
   const CreateTodo({super.key});
@@ -256,8 +255,7 @@ class _CreateState extends State<CreateTodo> {
                           color: Color(0xFFFFFFFF),
                         ),
                         onPressed: () {
-                          Navigator.of(context).pushNamed('/Lista');
-                          //TODO: aguardando o merge com a tela de listagem
+                          Navigator.of(context).pushNamed('/lista');
                         },
                       ),
                       IconButton(
@@ -267,7 +265,13 @@ class _CreateState extends State<CreateTodo> {
                           color: Color(0xFFFFFFFF),
                         ),
                         onPressed: () {
-                          //TODO: aguardando o merge com a tela de listagem
+                          controller.registrarTodo(
+                            _taskController.text,
+                            _descriptionController.text,
+                            success: () {
+                              Navigator.pop(context, true);
+                            },
+                          );
                         },
                       ),
                     ],
