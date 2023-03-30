@@ -13,9 +13,14 @@ class CreateTasksController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void registrarTodo(String title, String description) {
+  void registrarTodo(String title, String description,
+      {VoidCallback? success}) {
     createTodoRepository
         .createTodo(title, description, colorSelected)
-        .then((value) {});
+        .then((created) {
+      if (created) {
+        success?.call();
+      }
+    });
   }
 }

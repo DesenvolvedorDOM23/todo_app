@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => Login(),
           '/cadastro': ((context) => Cadastro()),
-          '/cadastrocomplete': (context) => const Register(),
+          '/cadastroComSucesso': (context) => Register(),
           '/lista': ((context) => Listagem()),
-          '/registrar': ((context) => CreateTodo()),
+          '/createTodo': ((context) => CreateTodo()),
         },
       ),
     );
