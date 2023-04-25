@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+
 import 'package:todo_app/model/data/repository.dart';
 import 'package:todo_app/presenter/listagem_presenter.dart';
 import './view/pages/listagem.dart';
@@ -15,7 +16,6 @@ import './presenter/login_presenter.dart';
 import 'model/data/user_repository.dart';
 import './view/pages/cadastro.dart';
 import 'package:todo_app/view/pages/register_page.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
         },
 
       ),
+
     );
   }
 }
